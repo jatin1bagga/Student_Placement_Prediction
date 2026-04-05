@@ -1,0 +1,45 @@
+#############################################
+# Repo policy: track only the essentials
+# - app.py
+# - requirements/req file(s)
+# - README
+# - Sample dataset
+# - models/
+# - all notebooks (*.ipynb)
+#############################################
+
+# Ignore everything by default (whitelist approach)
+*
+
+# Allow traversing folders so we can un-ignore specific files inside them
+!*/
+
+# Always keep the ignore rules file itself
+!.gitignore
+
+# App + docs
+!app.py
+!README*
+
+# Dependency lists (keep both names; you currently have requirements.txt)
+!requirements.txt
+!req.txt
+
+# Sample data (your current file is "Sample.csv")
+!Sample.csv
+!sample.csv
+
+# Models
+!models/
+!models/**
+
+# Notebooks (anywhere)
+!**/*.ipynb
+
+# Never commit notebook checkpoints, even though they match *.ipynb above
+**/.ipynb_checkpoints/
+
+# Local artifacts we don't want
+logs.log
+catboost_info/
+..venvScriptsactivate
